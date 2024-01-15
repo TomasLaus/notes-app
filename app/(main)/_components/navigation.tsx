@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import UserItem from "./user-item";
-import { 
+import {
   Popover,
   PopoverTrigger,
   PopoverContent
@@ -17,10 +17,12 @@ import { api } from "@/convex/_generated/api";
 import Item from "./item";
 import { toast } from "sonner";
 import DocumentList from "./document-list";
+import TrashBox from "./trash-box";
+import { useSearch } from "@/hooks/use-search";
 
 export const Navigation = () => {
 
-
+  const search = useSearch().onOpen
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const create = useMutation(api.documents.create)
@@ -136,28 +138,28 @@ export const Navigation = () => {
         </div>
         <div>
           <UserItem />
-          <Item label='Search' icon={Search} isSearch onClick={() => {}} />
-          <Item label='Settings' icon={Settings} onClick={() => {}} />
+          <Item label='Search' icon={Search} isSearch onClick={search} />
+          <Item label='Settings' icon={Settings} onClick={() => { }} />
           <Item onClick={handleCreate} label='New Page' icon={PlusCircle} />
         </div>
         <div className="mt-4">
-            <DocumentList />
-            <Item
-              onClick={handleCreate}
-              icon={Plus}
-              label="Add a page"
-            />
-            <Popover>
-              <PopoverTrigger className="w-full mt-4">
-                <Item label="Trash" icon={Trash} />
-              </PopoverTrigger>
-              <PopoverContent 
-                side={isMobile ? 'bottom' : 'right'} 
-                className="p-0 w-72"
-                >
-                  <p>Trash box</p>
-              </PopoverContent>
-            </Popover>
+          <DocumentList />
+          <Item
+            onClick={handleCreate}
+            icon={Plus}
+            label="Add a page"
+          />
+          <Popover>
+            <PopoverTrigger className="w-full mt-4">
+              <Item label="Trash" icon={Trash} />
+            </PopoverTrigger>
+            <PopoverContent
+              side={isMobile ? 'bottom' : 'right'}
+              className="p-0 w-72"
+            >
+              <TrashBox />
+            </PopoverContent>
+          </Popover>
         </div>
         <div
           className="opacity-0 group-hover/sidebar:opacity-100 transition cursor-ew-resize absolute h-full w-1 bg-primary/10 right-0 top-0"
