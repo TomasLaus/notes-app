@@ -48,7 +48,7 @@ const Item = ({
         event.stopPropagation();
         if (!id) return;
 
-        const promise = archive({id})
+        const promise = archive({ id })
 
         toast.promise(promise, {
             loading: 'Moving to trash...',
@@ -57,29 +57,29 @@ const Item = ({
         })
     }
 
-    const handleExpand = ( event: React.MouseEvent<HTMLDivElement, MouseEvent> ) => {
+    const handleExpand = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         event.stopPropagation();
         onExpand?.();
     }
 
-    const onCreate = ( event: React.MouseEvent<HTMLDivElement, MouseEvent> ) => {
+    const onCreate = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         event.stopPropagation();
 
         if (!id) return;
 
         const promise = create({ title: 'Untitled', parentDocument: id })
-          .then((documentId) => {
-            if (!expanded) {
-                onExpand?.();
-            }
-            // router.push(`/documents/${documentId}`)
-          })
-        
-          toast.promise(promise, {
+            .then((documentId) => {
+                if (!expanded) {
+                    onExpand?.();
+                }
+                // router.push(`/documents/${documentId}`)
+            })
+
+        toast.promise(promise, {
             loading: 'Creating a new note',
             success: 'New note created',
             error: 'Failed to create a new note'
-          })
+        })
     }
 
     const ChevronIcon = expanded ? ChevronDown : ChevronRight;
@@ -99,7 +99,7 @@ const Item = ({
             {!!id && (
                 <div
                     role="button"
-                    className="h-full rounded-sm hover:bg-neutral-300 dark:bg-neutral-600 mr-1"
+                    className="h-full rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600 mr-1"
                     onClick={handleExpand}
                 >
                     <ChevronIcon className="h-4 w-4 shrink-0 text-muted-foreground/50" />
