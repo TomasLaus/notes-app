@@ -17,7 +17,7 @@ import { ConfirmModal } from "@/components/modals/confirm-modal"
 
 const TrashBox = () => {
 
-    const router = useRouter();
+  const router = useRouter();
   const params = useParams();
   const documents = useQuery(api.documents.getTrash);
   const restore = useMutation(api.documents.restore);
@@ -30,7 +30,7 @@ const TrashBox = () => {
   });
 
   const onClick = (documentId: string) => {
-    // router.push(`/documents/${documentId}`);
+    router.push(`/documents/${documentId}`);
   };
 
   const onRestore = (
@@ -43,7 +43,7 @@ const TrashBox = () => {
     toast.promise(promise, {
       loading: "Restoring note...",
       success: "Note restored!",
-      error:" Failed to restore note."
+      error: " Failed to restore note."
     });
   };
 
@@ -55,7 +55,7 @@ const TrashBox = () => {
     toast.promise(promise, {
       loading: "Deleting note...",
       success: "Note deleted!",
-      error:" Failed to delete note."
+      error: "Failed to delete note."
     });
 
     if (params.documentId === documentId) {
