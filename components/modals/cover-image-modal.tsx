@@ -64,7 +64,7 @@ const CoverImageModal = () => {
         <Dialog open={coverImage.isOpen} onOpenChange={coverImage.onClose}>
             <DialogContent>
                 <DialogHeader>
-                    <h2 className='text-center text-lg font-semibold'>
+                    <h2 className='text-center text-lg font-semibold dark:text-muted-foreground'>
                         Cover Image
                     </h2>
                 </DialogHeader>

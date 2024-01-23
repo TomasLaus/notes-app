@@ -24,7 +24,7 @@ const UserItem = () => {
           role="button"
           className="flex items-center text-sm p-3 w-full hover:bg-primary/5"
         >
-          <div className="gap-x-2 flex items-center max-w-[150px]">
+          <div className="gap-x-2 flex items-center max-w-[150px] dark:text-muted-foreground">
             <Avatar className="h-5 w-5">
               <AvatarImage src={user?.imageUrl} />
             </Avatar>

@@ -15,14 +15,14 @@ export const SettingsModal = () => {
     return (
         <Dialog open={settings.isOpen} onOpenChange={settings.onClose}>
             <DialogContent>
-                <DialogHeader className='border-b pb-3'>
+                <DialogHeader className='border-b pb-3 dark:text-muted-foreground'>
                     <h2 className='text-lg font-medium'>
                         My settings
                     </h2>
                 </DialogHeader>
-                <div className='flex items-center justify-between'>
+                <div className='flex items-center justify-between dark:text-muted-foreground'>
                     <div className='flex flex-col gap-y-1'>
-                        <Label>
+                        <Label className='dark:text-muted-foreground'>
                             Appearance
                         </Label>
                         <span className='text-[0.8rem] text-muted-foreground'>

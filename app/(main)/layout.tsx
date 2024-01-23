@@ -12,8 +12,8 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
 
   if (isLoading) {
     return (
-      <div className="w-full flex justify-center items-center">
-        <Spinner size={"lg"} />
+      <div className="h-full flex items-center justify-center">
+        <Spinner size="lg" />
       </div>
     );
   }

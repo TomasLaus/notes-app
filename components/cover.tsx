@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { ImageIcon, X } from "lucide-react";
 
 import { useCoverImage } from "@/hooks/use-cover-image";
@@ -82,6 +83,12 @@ const Cover = ({
                 </div>
             )}
         </div>
+    )
+}
+
+Cover.Skeleton = function CoverSkeleton() {
+    return (
+        <Skeleton className="w-full h-[12vh]" />
     )
 }
 
