@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 
 import { ImageIcon, Smile, X } from "lucide-react"
 import { ElementRef, useRef, useState } from "react"
+import { useCoverImage } from "@/hooks/use-cover-image"
 
 
 interface ToolbarProps {
@@ -29,6 +30,8 @@ const Toolbar = ({
 
     const update = useMutation(api.documents.update)
     const removeIcon = useMutation(api.documents.RemoveIcon)
+
+    const coverImage = useCoverImage()
 
 
     const enableInput = () => {
@@ -116,7 +119,7 @@ const Toolbar = ({
                         className="text-muted-foreground text-xs"
                         variant='outline'
                         size='sm'
-                        onClick={() => { }}
+                        onClick={coverImage.onOpen}
                     >
                         <ImageIcon className="h-4 w-4 mr-2" />
                         Add cover
