@@ -3,7 +3,7 @@
 ![Tomtion - Note taking app)](./project-ss.png)
 
 
-This is a repository for Fullstack Notion Clone: Next.js 1, React, Convex, Tailwind 
+This is a repository for Fullstack Note taking app Tomtion (Notion clone): Next.js 14, React, Convex, Tailwind 
 
 
 Key Features:
