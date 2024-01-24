@@ -6,6 +6,10 @@
 This is a repository for Fullstack Note taking app Tomtion (Notion clone): Next.js 14, React, Convex, Tailwind 
 
 
+## 🔗 Demo
+[![demo](https://img.shields.io/badge/Click_here-000?style=for-the-badge&logo=starship&logoColor=white)](https://notes-app-tomaslaus.vercel.app/)
+
+
 Key Features:
 
 - Real-time database  🔗 
