@@ -44,7 +44,7 @@ const DocumentsPage = () => {
           alt="Empty"
           className="hidden dark:block"
         />
-        <h2 className="text-lg font-medium">
+        <h2 className="text-lg font-medium dark:text-muted-foreground">
           Welcome to {user?.firstName}&apos;s Tomtion
         </h2>
         <Button onClick={onCreate}>
